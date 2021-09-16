@@ -30,4 +30,10 @@ function constructNavList () {
 }
 
 // Function call
+// TODO delete this line
 constructNavList ();
+
+// Events
+// when page loads call constructNavList
+// when view is on a section add class active
+// when section clicked in nav list move to its section
