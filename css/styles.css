@@ -50,3 +50,7 @@ li:hover {
 	color: #fff;
 	cursor: pointer;
 }
+
+.highlighted .section_content {
+	color: blue;
+}

@@ -29,11 +29,36 @@ function constructNavList () {
 	}
 }
 
-// Function call
-// TODO delete this line
-constructNavList ();
+// Highlight section
+function highlightSection () {
+	const sections = document.querySelectorAll('section');
+	for (let section of sections) {
+		let top = section.getBoundingClientRect().top;
+		let height = section.getBoundingClientRect().height;
+		if (top <= 0 && Math.abs(top) < height) {
+			section.classList.add("highlighted");
+		}
+		else {
+			section.classList.remove("highlighted");
+		}
+	}
+}
 
 // Events
-// when page loads call constructNavList
-// when view is on a section add class active
+
+
 // when section clicked in nav list move to its section
+
+
+
+// when DOM is ready
+document.addEventListener('DOMContentLoaded', constructNavList());
+
+//scroll
+document.addEventListener('scroll', function () {
+	highlightSection ();
+});
+
+
+
+
