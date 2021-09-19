@@ -54,3 +54,10 @@ li:hover {
 .highlighted .section_content {
 	color: blue;
 }
+
+nav {
+	position: fixed;
+	top: 0 px;
+	background-color: #fff;
+	width: 100%;
+}

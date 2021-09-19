@@ -35,7 +35,7 @@ function highlightSection () {
 	for (let section of sections) {
 		let top = section.getBoundingClientRect().top;
 		let height = section.getBoundingClientRect().height;
-		if (top <= 0 && Math.abs(top) < height) {
+		if (top <= 1 && Math.abs(top) < height) {
 			section.classList.add("highlighted");
 		}
 		else {
@@ -44,21 +44,21 @@ function highlightSection () {
 	}
 }
 
-// Events
-
-
-// when section clicked in nav list move to its section
-
-
-
-// when DOM is ready
+// When DOM is ready construct the navigation list
 document.addEventListener('DOMContentLoaded', constructNavList());
 
-//scroll
+// Highlight 
 document.addEventListener('scroll', function () {
 	highlightSection ();
 });
 
-
-
-
+// when section clicked in nav list move to its section
+const navItems = document.querySelector("#nav_list").children;
+for (let i=0; i<navItems.length; i++) {
+	navItems[i].addEventListener('click', 
+		function () {
+			const section = document.querySelector("#section" + (i+1));
+			section.scrollIntoView();
+		}
+	)
+}
