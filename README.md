@@ -6,34 +6,10 @@ This project is meant to satisfy Udacity Web Developer Professional track requir
 
 This project consists of a single webpage. The webpage consists of multiple section with the ability to navigate easily between section using the dynamically-generated responsive interactive navigation bar.
 
-## Code Breakdown
+## Code Overview
 
-Here I will break down the code and explain how it works.
+Here I will explain some parts of the code that I think they need more explanation than what is provided through the comments.
 
-- First we have `addNavListItem` function:
-```
-// Takes a section and adds it to the navigation list
-function addNavListItem (section) {
-  const header = section.querySelector("h2").innerText;
-  const navList = document.getElementById("nav_list");
-  const newItem = document.createElement("li");
-  newItem.innerText = header;
-  navList.appendChild(newItem);
-}
-```
-
-This takes a section, accesses its header and adds the header inner text to the navigation list
-
-- `constructNavList()` is self explainatory:
-```
-// Loops through all sections in the documents and adds thier headers to the navigation list
-function constructNavList () {
-  const sections = document.querySelectorAll("section");
-  for (let section of sections) {
-    addNavListItem(section);
-  }
-}
-```
 - This function checks the visibilty of an element:
 ```
 // Check if an element is visible in viewport
@@ -71,4 +47,6 @@ function amountOfView (element) {
 	}
 }
 ```
+In order to explain how this function works, I created this simple diagram:
+![viewport_diagram](https://user-images.githubusercontent.com/22101838/134018699-32203e59-044f-4486-bb48-cfe56145e829.png)
 
