@@ -66,6 +66,11 @@ function highlightSection () {
 	nav.children[highIndex].classList.add("active");
 }
 
+// Scroll to section with smooth behavior
+function scrollToSection (element) {
+	element.scrollIntoView({behavior: "smooth", block: "start"});
+}
+
 // Events
 // When DOM is ready construct the navigation list
 document.addEventListener('DOMContentLoaded', constructNavList());
@@ -78,14 +83,9 @@ document.addEventListener('scroll', function () {
 // when item is clicked in nav list move to its section
 const navItems = document.querySelector("#nav_list").children;
 for (let i=0; i<navItems.length; i++) {
-	navItems[i].addEventListener('click', 
-		function () {
-			// Select section by ID using the its order in navigation list
-			const section = document.querySelector("#section" + (i+1));
-			// Scroll to this section
-			section.scrollIntoView();
-			// Scroll up a little for better visibility
-			window.scrollBy(0, -50);
-		}
-	)
+	// Select section by ID using the its order in navigation list
+	let section = document.querySelector("#section" + (i+1));
+	navItems[i].addEventListener('click', function () {
+		scrollToSection(section);
+	});
 }
