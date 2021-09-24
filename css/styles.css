@@ -1,8 +1,8 @@
 main {
 	background-color: #fff;
-	margin-left: 2em;
-	margin-right: 2em;
-	margin-top: 4em;
+	margin-left: 5vw;
+	margin-right: 5vw;
+	margin-top: 5em;
 }
 
 .main_header {
@@ -16,7 +16,7 @@ main {
 
 .main_header h1 {
 	font-family: 'Open Sans';
-	font-size: 7em;
+	font-size: 12vw;
 	margin: 0;
 	position: absolute;
 	top: 10%;
@@ -24,7 +24,7 @@ main {
 }
 h2 {
 	font-family: 'Open Sans';
-	font-size: 5em;
+	font-size: 8vw;
 }
 .section_content {
 	background-color: #f4e4c1;
@@ -44,8 +44,9 @@ ul {
 }
 
 li {
-	display: inline;
-	margin: 1em;
+	display: inline-block;
+	margin-left: 0.5em;
+	margin-right: 0.53em;
 	padding: 0.3em;
 	font-family: 'Open Sans';
 	font-size: 1em;	
